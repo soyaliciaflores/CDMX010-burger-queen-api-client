@@ -4,6 +4,8 @@ import {useHistory} from 'react-router-dom'
 import axios from 'axios';
 import md5 from 'md5';
 import Cookies from 'universal-cookie'
+import swal from 'sweetalert';
+
 
 
 
@@ -45,7 +47,10 @@ import Cookies from 'universal-cookie'
                 cookies.set('lastname', respuesta.lastname,{path:"/"})
                 cookies.set('name', respuesta.name,{path:"/"})
                 cookies.set('username', respuesta.username,{path:"/"})
-                alert("Bienvenidx" + " " +respuesta.name + " " + respuesta.lastname);
+                swal({
+                    icon: "success",
+                    timer: 10000,
+                  });
                 window.location.href="./menus";
 
             }else{
