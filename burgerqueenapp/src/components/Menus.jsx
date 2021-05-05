@@ -1,32 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logoBurguerQueen from '../assets/logoBurguerQueen.png'
-import {useHistory} from 'react-router-dom'
+import Cookies from 'universal-cookie'
 
+const cookies = new Cookies();
 
-const Menus = () => {
-
-    const history = useHistory();
-
-    const ButtonToBreakfast = (e) =>{
-        e.preventDefault();
-        console.log("el boton sirve BREAKFAST")
-        history.push('/breakfast')
-        
+class Menus extends Component {
+    logOut=()=>{
+        cookies.remove('id',{path:"/"});
+        cookies.remove('lastname',{path:"/"});
+        cookies.remove('name',{path:"/"});
+        cookies.remove('username',{path:"/"});
+        window.location.href='./';
     }
 
-    const ButtonToDinner = (e) =>{
-        e.preventDefault();
-        console.log("el boton sirve DINNER")
-        history.push('/dinner')
-        
-    }
-
-    const Logout = (e) =>{
-        e.preventDefault();
-        console.log("el boton sirve logout")
-        history.push('/')
-        
-    }
+    render(){
+        console.log('id: '+ cookies.get('id'));
+        console.log('lastname :' + cookies.get('lastname'));
+        console.log('name :' + cookies.get('name'));
+        console.log('username :' + cookies.get('username'));
 
     return (
         <div>
@@ -34,17 +25,18 @@ const Menus = () => {
                 <img src={logoBurguerQueen}></img>
             </div>
             <div>     
-                <input className="buttonFood" type="submit" value="Menú desayuno" onClick={ButtonToBreakfast}></input>
+                <input className="buttonFood" type="submit" value="Menú desayuno"></input>
                 <br></br>
-                <input className="buttonFood" type="submit" value="Menú comida"onClick={ButtonToDinner}></input>
+                <input className="buttonFood" type="submit" value="Menú comida"></input>
             </div>
             <div>
-                <input className="buttonLogout" type="submit" value="Cerrar Sesión" onClick={Logout}></input>
+                <button className="buttonLogout" onClick={()=>this.logOut()}>Cerrar Sesión</button>
             </div>
 
         </div>
 
     )
+    }
 };
 
 export default Menus;

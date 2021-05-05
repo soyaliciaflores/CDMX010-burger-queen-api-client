@@ -87,3 +87,66 @@ input::placeholder {
     margin: 1rem 0rem 0rem 13rem;
 
   }
+
+.cardInventory{
+  position: absolute;
+  width: 304px;
+  height: 166px;
+  left: 102.77px;
+  top: 118px;
+  background: #FFFFFF;
+  border-radius: 8px;
+}
+
+.itemInventory{
+position: fixed;
+width: 142px;
+height: 89px;
+left: 69px;
+top: 132px;
+}
+
+#textoncard{
+  display: block;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-inline-start:12.5rem;
+  margin-inline-end: 0px;
+  font-size: 1rem;
+  font-weight: 400;
+
+}
+
+.spaceforbuttoncard{
+  background-color: #f0595b;
+  margin: 0rem 0rem 0rem 11rem;
+  padding: 0rem 0rem 0rem 0rem;
+  width: 112px;
+  height: 37px;
+  border-radius: 6px;
+
+}
+
+.spaceforkg{
+  background-color: #f0595b;
+  margin: -0.5rem 0rem 0rem 11rem;
+  padding: 0rem 0rem 0rem 0rem;
+  width: 46px;
+  height: 30px;
+  margin-inline-start: 13rem;
+  border-radius: 6px;
+
+}
+
+.buttonIncreaseDecrease{
+  position: initial;
+  width: 47px;
+  height: 33px;
+  background: #f0595b;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5%;
+  margin: 0rem 0rem 0rem 0rem;
+  font-weight: bold;
+}
