@@ -40,17 +40,14 @@ import swal from 'sweetalert';
         .then(response=>{
             return response.data;
         })
-        .then(response =>{
-            if(response.length>0){
+        .then(response => {
+            if  (response.length>0){
                 var respuesta = response[0];
                 cookies.set('id', respuesta.id,{path:"/"})
                 cookies.set('lastname', respuesta.lastname,{path:"/"})
                 cookies.set('name', respuesta.name,{path:"/"})
                 cookies.set('username', respuesta.username,{path:"/"})
-                swal({
-                    icon: "success",
-                    timer: 10000,
-                  });
+                alert("bienvenidx " + respuesta.name + respuesta.lastname)
                 window.location.href="./menus";
 
             }else{
