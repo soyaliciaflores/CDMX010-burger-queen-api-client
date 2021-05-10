@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 
-export const HamburguesaSenciila = () =>{
+export const PedidoBreakfast = () =>{
 
-    const [HamburguesaSenciila, setHamburguesaSenciila] =useState(0) 
+    const [CafeAmericano, setCafeAmericano] =useState(0) 
     const Subir=() => {
-        setHamburguesaSenciila(HamburguesaSenciila + 1)
+        setCafeAmericano(CafeAmericano + 1)
     }
     const Bajar=() => {
-        setHamburguesaSenciila(HamburguesaSenciila - 1)
+        setCafeAmericano(CafeAmericano - 1)
     }
 
   
@@ -93,12 +93,12 @@ export const HamburguesaSenciila = () =>{
                     </div>
                     <div className="container-list">
                     <div className="container-cant">
-                        <h2> {HamburguesaSenciila}</h2>
+                        <h2> {CafeAmericano}</h2>
                     </div>
                     <div className="container-descript">
                     <p>
                       {
-                        HamburguesaSenciila > 0 ? 'Hamburguesa sencilla' : ''
+                        CafeAmericano > 0 ? 'Café Americano' : ''
                       }
                     </p>
                     </div>
@@ -133,4 +133,4 @@ export const HamburguesaSenciila = () =>{
         </div>
     )
 };
-export default HamburguesaSenciila;
+export default PedidoBreakfast;
