@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,6 +17,12 @@ import Cookers from './components/Cookers'
 
 
 function App() {
+/*const [order, setOrder]= useState(
+  {nombreCliente:"",
+ items:[],
+ total:0,
+ status:"pending"
+})*/
   return (
     <Router>
       <Switch>

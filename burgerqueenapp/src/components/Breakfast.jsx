@@ -1,5 +1,17 @@
-import React from 'react';
-const Breakfast = () => {
+import React, { useState } from 'react';
+
+
+export const PedidoBreakfast = () =>{
+
+    const [CafeAmericano, setCafeAmericano] =useState(0) 
+    const Subir=() => {
+        setCafeAmericano(CafeAmericano + 1)
+    }
+    const Bajar=() => {
+        setCafeAmericano(CafeAmericano - 1)
+    }
+
+  
     return (
         <div className="container-main-dinner">
             <div className="container-header-dinner">
@@ -19,10 +31,10 @@ const Breakfast = () => {
             <h4 className="h4-dinner">Americano</h4>
             <div className="line-options">
             <div>
-                <h4 className="sign-dinner">+</h4>
+                <button className="sign-dinner" onClick={Subir} >+</button>
             </div>
             <div>
-                <h4 className="sign-dinner">-</h4>
+                <button className="sign-dinner" onClick={Bajar}>-</button>
             </div>
             </div>
             </div>
@@ -80,8 +92,16 @@ const Breakfast = () => {
                     <h3>Total</h3>
                     </div>
                     <div className="container-list">
-                    <div className="container-cant"></div>
-                    <div className="container-descript"></div>
+                    <div className="container-cant">
+                        <h2> {CafeAmericano}</h2>
+                    </div>
+                    <div className="container-descript">
+                    <p>
+                      {
+                        CafeAmericano > 0 ? 'Café Americano' : ''
+                      }
+                    </p>
+                    </div>
                     <div className="container-total"></div>
                     </div>
                     <div className="container-final-total">
@@ -113,4 +133,4 @@ const Breakfast = () => {
         </div>
     )
 };
-export default Breakfast;
+export default PedidoBreakfast;
