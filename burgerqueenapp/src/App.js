@@ -1,4 +1,6 @@
+import { useState} from 'react';
 import React from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,17 +17,24 @@ import Adminwaiters from './components/Adminwaiters'
 import Cookers from './components/Cookers'
 
 function App() {
+  const[order, setOrder] = useState({
+    client: '',
+    items:[],
+    total:0,
+    status:'pending'
+  })
+
   return (
     <Router>
       <Switch>
         <Route path="/menus">
           <Menus/>
-        </Route>
+        </Route> 
         <Route path="/dinner">
           <Dinner/>
         </Route>
         <Route path="/breakfast">
-          <Breakfast/>
+          <Breakfast setOrder={setOrder} order={order}/>
         </Route>
         <Route path="/orders">
           <Orders/>

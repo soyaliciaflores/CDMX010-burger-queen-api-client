@@ -1,8 +1,31 @@
-import React from 'react';
-import {useHistory} from 'react-router-dom'
+import React, { useState } from 'react';
 
 
-const Dinner = () => {
+const DinnerOrder = () => {
+    const [BurgerDouble, setBurgerDouble] =useState(0)
+    const [BurgerBasic, setBurgerBasic] = useState(0)
+    const [Potatoes, setPotatoes] = useState(0)
+    const UpBurgerDouble = () =>{
+        setBurgerDouble(BurgerDouble + 1)
+    }
+    const DownBurgerDouble =() =>{
+        setBurgerDouble(BurgerDouble  - 1)
+    }
+    
+    const UpBurgerBasic = () =>{
+        setBurgerBasic(BurgerBasic  + 1)
+    }
+    const DownBurgerBasic =() =>{
+        setBurgerBasic(BurgerBasic  - 1)
+    }
+    const UpPotatoes = () => {
+        setPotatoes(Potatoes + 1)
+    }
+    const DownPotatoes =() =>{
+        setPotatoes(Potatoes - 1)
+    }
+
+
     return (
         <div className="container-main-dinner">
             <div className="container-header-dinner">
@@ -23,10 +46,10 @@ const Dinner = () => {
             <h4 className="h4-dinner">Doble</h4>
             <div className="line-options">
             <div>
-                <h4 className="sign-dinner">+</h4>
+                <button className="sign-dinner" onClick={UpBurgerDouble}>+</button>
             </div>
             <div>
-                <h4 className="sign-dinner">-</h4>
+                <button className="sign-dinner" onClick={DownBurgerDouble}>-</button>
             </div>
             </div>
             </div>
@@ -35,10 +58,10 @@ const Dinner = () => {
             <h4 className="h4-dinner">Sencilla</h4>
             <div className="line-options">
             <div>
-                <h4 className="sign-dinner">+</h4>
+                <button className="sign-dinner" onClick={UpBurgerBasic}>+</button>
             </div>
             <div>
-                <h4 className="sign-dinner">-</h4>
+                <button className="sign-dinner" onClick={DownBurgerBasic}>-</button>
             </div>
             </div>
             </div>
@@ -139,8 +162,23 @@ const Dinner = () => {
                     <h3>Total</h3>
                     </div>
                     <div className="container-list">
-                    <div className="container-cant"></div>
-                    <div className="container-descript"></div>
+                    <div className="container-cant">
+                    <p>{BurgerDouble}</p>
+                    <p>{BurgerBasic}</p>
+
+                    </div>
+                    <div className="container-descript">
+                       <p>
+                           {
+                               BurgerDouble > 0 ? 'Hamburguesa Doble' : ''
+                           }
+                       </p>
+                       <p>
+                           {
+                               BurgerBasic > 0 ? 'Hamburguesa Sencilla' : ''
+                           }
+                       </p>
+                    </div>
                     <div className="container-total"></div>
                     </div>
                     <div className="container-final-total">
@@ -173,4 +211,4 @@ const Dinner = () => {
     )
 };
 
-export default Dinner;
+export default DinnerOrder;
